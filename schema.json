@@ -1176,6 +1176,10 @@
       ]
     ],
     "properties": {
+      "type":
+      {
+        "type": "string"
+      },
       "$ref": "_definitions.yaml#/data_file_properties",
       "data_category": {
         "term": {
