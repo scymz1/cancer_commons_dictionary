@@ -1120,7 +1120,7 @@
     "program": "*",
     "description": "Data file containing gene expression information generated internally by the GDC.",
     "additionalProperties": false,
-    "submittable": false,
+    "submittable": true,
     "validators": null,
     "systemProperties": [
       "id",
