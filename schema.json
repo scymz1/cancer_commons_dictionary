@@ -1133,8 +1133,6 @@
     ],
     "links": [
       {
-        "exclusive": false,
-        "required": true,
         "subgroup": [
           {
             "name": "core_metadata_collections",
