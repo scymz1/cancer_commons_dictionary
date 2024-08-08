@@ -5071,9 +5071,9 @@
                 "description": "adt0101",
                 "enum":
                 [
-                    "2 to 3 times a week",
-                    "2 to 4 times a month",
-                    "4 or more times a week",
+                    "2 to 3 packs a week",
+                    "2 to 4 packs a month",
+                    "4 or more packs a week",
                     "Monthly or less",
                     "Never",
                     "Not Done/Missing",
