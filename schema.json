@@ -12847,8 +12847,8 @@
                 "description": "The text term used to describe the study arm of the patient.",
                 "enum":
                 [
-                    "Heavy Drinker with Alcoholic Hepatits",
-                    "Heavy Drinker without Alcoholic Hepatits",
+                    "Heavy Smoker with immune disorders",
+                    "Heavy Smoker with cancer",
                     "Healthy Donor"
                 ]
             },
