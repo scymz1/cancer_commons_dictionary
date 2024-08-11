@@ -5068,7 +5068,7 @@
             },
             "adt0101":
             {
-                "description": "adt0101",
+                "description": "Smoking frequency in the past year.",
                 "enum":
                 [
                     "2 to 3 packs a week",
@@ -5082,7 +5082,7 @@
             },
             "adt0102":
             {
-                "description": "adt0102",
+                "description": "Smokes per day in the past year.",
                 "enum":
                 [
                     "1 or 2",
@@ -5096,7 +5096,7 @@
             },
             "adt0103":
             {
-                "description": "adt0103",
+                "description": "Frequency of heaving smoking in the past year.",
                 "enum":
                 [
                     "Never",
@@ -5104,100 +5104,6 @@
                     "Less than monthly",
                     "Daily or almost daily",
                     "Monthly",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0104":
-            {
-                "description": "adt0104",
-                "enum":
-                [
-                    "Never",
-                    "Weekly",
-                    "Less than monthly",
-                    "Daily or almost daily",
-                    "Monthly",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0105":
-            {
-                "description": "adt0105",
-                "enum":
-                [
-                    "Never",
-                    "Weekly",
-                    "Less than monthly",
-                    "Daily or almost daily",
-                    "Monthly",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0106":
-            {
-                "description": "adt0106",
-                "enum":
-                [
-                    "Never",
-                    "Weekly",
-                    "Less than monthly",
-                    "Daily or almost daily",
-                    "Monthly",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0107":
-            {
-                "description": "adt0107",
-                "enum":
-                [
-                    "Never",
-                    "Weekly",
-                    "Less than monthly",
-                    "Daily or almost daily",
-                    "Monthly",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0108":
-            {
-                "description": "adt0108",
-                "enum":
-                [
-                    "Never",
-                    "Weekly",
-                    "Less than monthly",
-                    "Daily or almost daily",
-                    "Monthly",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0109":
-            {
-                "description": "adt0109",
-                "enum":
-                [
-                    "No",
-                    "Yes, during the last year",
-                    "Yes, but not in the last year",
-                    "Not Done/Missing",
-                    "null"
-                ]
-            },
-            "adt0110":
-            {
-                "description": "adt0110",
-                "enum":
-                [
-                    "No",
-                    "Yes, during the last year",
-                    "Yes, but not in the last year",
                     "Not Done/Missing",
                     "null"
                 ]
@@ -12947,9 +12853,9 @@
                     "Unknown"
                 ]
             },
-            "days_to_aki":
+            "days_to_irAE":
             {
-                "description": "How many days from index date to aki.",
+                "description": "How many days from index date to irAE.",
                 "type":
                 [
                     "number"
@@ -12975,9 +12881,9 @@
                     "Unknown"
                 ]
             },
-            "days_90_aki":
+            "days_90_irAE":
             {
-                "description": "90 days aki.",
+                "description": "90 days irAE.",
                 "enum":
                 [
                     "Yes",
@@ -12985,9 +12891,9 @@
                     "Unknown"
                 ]
             },
-            "days_180_aki":
+            "days_180_irAE":
             {
-                "description": "180 days aki.",
+                "description": "180 days irAE.",
                 "enum":
                 [
                     "Yes",
