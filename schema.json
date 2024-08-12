@@ -12843,9 +12843,9 @@
                     "number"
                 ]
             },
-            "aki_status":
+            "irAE_status":
             {
-                "description": "Aki status of the patient.",
+                "description": "irAE status of the patient.",
                 "enum":
                 [
                     "Yes",
