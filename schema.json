@@ -5068,12 +5068,12 @@
             },
             "adt0101":
             {
-                "description": "Smoking frequency in the past year.",
+                "description": "Drinking frequency in the past year.",
                 "enum":
                 [
-                    "2 to 3 packs a week",
-                    "2 to 4 packs a month",
-                    "4 or more packs a week",
+                    "2 to 3 times a week",
+                    "2 to 4 times a month",
+                    "4 or more times a week",
                     "Monthly or less",
                     "Never",
                     "Not Done/Missing",
@@ -5082,7 +5082,7 @@
             },
             "adt0102":
             {
-                "description": "Smokes per day in the past year.",
+                "description": "Drinks per day in the past year.",
                 "enum":
                 [
                     "1 or 2",
@@ -5096,7 +5096,7 @@
             },
             "adt0103":
             {
-                "description": "Frequency of heaving smoking in the past year.",
+                "description": "Frequency of heaving drinking in the past year.",
                 "enum":
                 [
                     "Never",
