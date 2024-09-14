@@ -1,0 +1,82 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: analysis
+description: Metadata for the RNA expression pipeline used to quantify RNA gene and
+  exon expression from unharmonized or GDC harmonized data.
+id: rna_expression_calling_workflow
+links:
+- exclusive: true
+  required: true
+  subgroup:
+  - backref: rna_expression_calling_workflows
+    label: performed_on
+    multiplicity: many_to_one
+    name: aligned_reads_files
+    required: false
+    target_type: aligned_reads
+  - backref: rna_expression_calling_workflows
+    label: performed_on
+    multiplicity: many_to_one
+    name: submitted_aligned_reads_files
+    required: false
+    target_type: submitted_aligned_reads
+  - backref: rna_expression_calling_workflows
+    label: performed_on
+    multiplicity: many_to_one
+    name: submitted_unaligned_reads_files
+    required: false
+    target_type: submitted_unaligned_reads
+namespace: https://gdc.cancer.gov
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/workflow_properties
+  aligned_reads_files:
+    $ref: _definitions.yaml#/to_one
+  submitted_aligned_reads_files:
+    $ref: _definitions.yaml#/to_one
+  submitted_unaligned_reads_files:
+    $ref: _definitions.yaml#/to_one
+  type:
+    enum:
+    - rna_expression_calling_workflow
+  workflow_type:
+    enum:
+    - CellRanger - 10x Filtered Counts
+    - CellRanger - 10x Raw Counts
+    - Cufflinks
+    - DEXSeq
+    - HTSeq - Counts
+    - HTSeq - FPKM
+    - HTSeq - FPKM-UQ
+    - Kallisto - HDF5
+    - Kallisto - Quantification
+    - RNA-SeQC - Counts
+    - RNA-SeQC - FPKM
+    - RSEM - Quantification
+    - STAR - Counts
+    - STAR - FPKM
+    - STAR - Smart-Seq2 Raw Counts
+    - STAR - Smart-Seq2 Filtered Counts
+    - zUMIs - Smart-Seq2 Counts
+    term:
+      $ref: _terms.yaml#/workflow_type
+required:
+- type
+- submitter_id
+- workflow_link
+- workflow_type
+submittable: false
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- state
+title: RNA Expression Calling Workflow
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null

@@ -1,0 +1,108 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: data_file
+description: 'Structural_variation reads that are used as input to GDC workflows.
+
+  '
+id: structural_variation
+links:
+- exclusive: true
+  required: true
+  subgroup:
+  - backref: structural_variations
+    label: data_from
+    multiplicity: one_to_one
+    name: genomic_profile_harmonization_workflows
+    required: false
+    target_type: genomic_profile_harmonization_workflow
+  - backref: structural_variations
+    label: data_from
+    multiplicity: many_to_one
+    name: structural_variant_calling_workflows
+    required: false
+    target_type: structural_variant_calling_workflow
+  - backref: structural_variations
+    label: data_from
+    multiplicity: one_to_many
+    name: core_metadata_collections
+    required: false
+    target_type: core_metadata_collection
+namespace: http://gdc.nci.nih.gov
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/data_file_properties
+  core_metadata_collections:
+    $ref: _definitions.yaml#/to_many
+  data_category:
+    enum:
+    - Somatic Structural Variation
+    - Structural Variation
+    term:
+      $ref: _terms.yaml#/data_category
+  data_format:
+    enum:
+    - BAM
+    - BEDPE
+    - CSV
+    - FASTA
+    - GVF
+    - JSON
+    - TSV
+    - TXT
+    - VCF
+    term:
+      $ref: _terms.yaml#/data_format
+  data_type:
+    enum:
+    - Structural Alteration
+    - Structural Rearrangement
+    - Transcript Fusion
+    term:
+      $ref: _terms.yaml#/data_type
+  experimental_strategy:
+    enum:
+    - WGS
+    - WXS
+    - Low Pass WGS
+    - Validation
+    - RNA-Seq
+    - miRNA-Seq
+    - Targeted Sequencing
+    - Total RNA-Seq
+    - DNA Panel
+    term:
+      $ref: _terms.yaml#/experimental_strategy
+  genomic_profile_harmonization_workflows:
+    $ref: _definitions.yaml#/to_one
+  structural_variant_calling_workflows:
+    $ref: _definitions.yaml#/to_one
+  type:
+    enum:
+    - aligned_reads
+required:
+- type
+- submitter_id
+- file_name
+- file_size
+- data_format
+- md5sum
+- data_category
+- data_type
+- experimental_strategy
+submittable: true
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- state
+- file_state
+- error_type
+title: structural_variation
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null

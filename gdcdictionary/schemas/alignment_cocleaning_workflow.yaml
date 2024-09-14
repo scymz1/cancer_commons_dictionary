@@ -1,0 +1,60 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: analysis
+description: 'Metadata for the alignment and cocleaning pipeline used to align reads
+  in the GDC harmonization pipelines.
+
+  '
+id: alignment_cocleaning_workflow
+links:
+- exclusive: true
+  required: true
+  subgroup:
+  - backref: alignment_cocleaning_workflows
+    label: performed_on
+    multiplicity: one_to_many
+    name: submitted_aligned_reads_files
+    required: false
+    target_type: submitted_aligned_reads
+  - backref: alignment_cocleaning_workflows
+    label: performed_on
+    multiplicity: one_to_many
+    name: submitted_unaligned_reads_files
+    required: false
+    target_type: submitted_unaligned_reads
+namespace: https://dcp.bionimbus.org/
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/workflow_properties
+  submitted_aligned_reads_files:
+    $ref: _definitions.yaml#/to_many
+  submitted_unaligned_reads_files:
+    $ref: _definitions.yaml#/to_many
+  type:
+    enum:
+    - alignment_cocleaning_workflow
+  workflow_type:
+    enum:
+    - BWA with Mark Duplicates and Cocleaning
+    term:
+      $ref: _terms.yaml#/workflow_type
+required:
+- type
+- submitter_id
+- workflow_link
+- workflow_type
+submittable: false
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- state
+title: Alignment Cocleaning Workflow
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null

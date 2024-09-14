@@ -1,0 +1,83 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: data_file
+description: Data file related to the copy number pipeline that contains any outputs
+  not strictly defined in other nodes
+id: copy_number_auxiliary_file
+links:
+- exclusive: true
+  required: true
+  subgroup:
+  - backref: copy_number_auxiliary_files
+    label: derived_from
+    multiplicity: one_to_one
+    name: somatic_copy_number_workflows
+    required: true
+    target_type: somatic_copy_number_workflow
+  - backref: copy_number_auxiliary_files
+    label: data_from
+    multiplicity: one_to_many
+    name: core_metadata_collections
+    required: false
+    target_type: core_metadata_collection
+namespace: https://gdc.cancer.gov
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/data_file_properties
+  core_metadata_collections:
+    $ref: _definitions.yaml#/to_many
+  data_category:
+    enum:
+    - Copy Number Variation
+    term:
+      $ref: _terms.yaml#/data_category
+  data_format:
+    enum:
+    - TAR
+    term:
+      $ref: _terms.yaml#/data_format
+  data_type:
+    enum:
+    - Intermediate Analysis Archive
+    term:
+      $ref: _terms.yaml#/data_type
+  experimental_strategy:
+    enum:
+    - WGS
+    term:
+      $ref: _terms.yaml#/experimental_strategy
+  platform:
+    enum:
+    - Illumina
+    term:
+      $ref: _terms.yaml#/platform
+  somatic_copy_number_workflows:
+    $ref: _definitions.yaml#/to_one
+required:
+- type
+- submitter_id
+- file_name
+- file_size
+- md5sum
+- data_category
+- data_format
+- data_type
+- experimental_strategy
+- platform
+submittable: false
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- file_state
+- state
+- error_type
+title: Copy Number Auxiliary File
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null

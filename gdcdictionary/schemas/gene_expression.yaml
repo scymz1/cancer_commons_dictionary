@@ -1,0 +1,89 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: data_file
+description: Data files containing gene expression information generated internally
+  by the GDC.
+id: gene_expression
+links:
+- exclusive: false
+  required: true
+  subgroup:
+  - backref: gene_expressions
+    label: data_from
+    multiplicity: one_to_one
+    name: core_metadata_collections
+    required: true
+    target_type: core_metadata_collection
+  - backref: gene_expressions
+    label: data_from
+    multiplicity: many_to_one
+    name: rna_expression_calling_workflows
+    required: false
+    target_type: rna_expression_calling_workflow
+namespace: https://gdc.cancer.gov
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/data_file_properties
+  core_metadata_collections:
+    $ref: _definitions.yaml#/to_one
+  data_category:
+    enum:
+    - Transcriptome Profiling
+    term:
+      $ref: _terms.yaml#/data_category
+  data_format:
+    enum:
+    - CSV
+    - HDF5
+    - MEX
+    - TSV
+    - TXT
+    term:
+      $ref: _terms.yaml#/data_format
+  data_type:
+    enum:
+    - Exon Expression Quantification
+    - Gene Expression Quantification
+    - Isoform Expression Quantification
+    - Splice Junction Quantification
+    term:
+      $ref: _terms.yaml#/data_type
+  experimental_strategy:
+    enum:
+    - m6A MeRIP-Seq
+    - RNA-Seq
+    - scRNA-Seq
+    - Total RNA-Seq
+    term:
+      $ref: _terms.yaml#/experimental_strategy
+  rna_expression_workflows:
+    $ref: _definitions.yaml#/to_one
+  type:
+    type: string
+required:
+- type
+- submitter_id
+- file_name
+- file_size
+- md5sum
+- data_category
+- data_format
+- data_type
+- experimental_strategy
+submittable: true
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- file_state
+- state
+- error_type
+title: Gene Expression
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null

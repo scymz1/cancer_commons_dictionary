@@ -1,0 +1,82 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: data_file
+description: Data file containing raw data from a genotyping array.
+id: submitted_genotyping_array
+links:
+- exclusive: false
+  required: true
+  subgroup:
+  - backref: submitted_genotyping_arrays
+    label: derived_from
+    multiplicity: many_to_one
+    name: aliquots
+    required: true
+    target_type: aliquot
+  - backref: submitted_genotyping_arrays
+    label: data_from
+    multiplicity: many_to_one
+    name: core_metadata_collections
+    required: false
+    target_type: core_metadata_collection
+namespace: https://gdc.cancer.gov
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/data_file_properties
+  aliquots:
+    $ref: _definitions.yaml#/to_one
+  core_metadata_collections:
+    $ref: _definitions.yaml#/to_one
+  data_category:
+    enum:
+    - Copy Number Variation
+    term:
+      $ref: _terms.yaml#/data_category
+  data_format:
+    enum:
+    - CEL
+    term:
+      $ref: _terms.yaml#/data_format
+  data_type:
+    enum:
+    - Raw Intensities
+    term:
+      $ref: _terms.yaml#/data_type
+  experimental_strategy:
+    enum:
+    - Genotyping Array
+    term:
+      $ref: _terms.yaml#/experimental_strategy
+  platform:
+    enum:
+    - Affymetrix SNP 6.0
+    term:
+      $ref: _terms.yaml#/platform
+required:
+- type
+- submitter_id
+- file_name
+- file_size
+- md5sum
+- data_category
+- data_format
+- data_type
+- experimental_strategy
+- platform
+submittable: true
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- file_state
+- state
+- error_type
+title: Submitted Genotyping Array
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null

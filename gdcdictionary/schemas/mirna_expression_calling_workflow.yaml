@@ -1,0 +1,59 @@
+$schema: http://json-schema.org/draft-04/schema#
+additionalProperties: false
+category: analysis
+description: 'Metadata for the miRNA expression calling pipeline.
+
+  '
+id: mirna_expression_calling_workflow
+links:
+- exclusive: true
+  required: true
+  subgroup:
+  - backref: mirna_expression_calling_workflows
+    label: performed_on
+    multiplicity: many_to_many
+    name: submitted_aligned_reads_files
+    required: false
+    target_type: submitted_aligned_reads
+  - backref: mirna_expression_calling_workflows
+    label: performed_on
+    multiplicity: many_to_many
+    name: aligned_reads_files
+    required: false
+    target_type: aligned_reads
+namespace: https://dcp.bionimbus.org/
+program: '*'
+project: '*'
+properties:
+  $ref: _definitions.yaml#/workflow_properties
+  aligned_reads_files:
+    $ref: _definitions.yaml#/to_many
+  submitted_aligned_reads_files:
+    $ref: _definitions.yaml#/to_many
+  type:
+    enum:
+    - germline_mutation_calling_workflow
+  workflow_type:
+    enum:
+    - HaplotypeCaller
+    term:
+      $ref: _terms.yaml#/workflow_type
+required:
+- type
+- submitter_id
+- workflow_link
+- workflow_type
+submittable: false
+systemProperties:
+- id
+- project_id
+- created_datetime
+- updated_datetime
+- state
+title: miRNA Expression Calling Workflow
+type: object
+uniqueKeys:
+- - id
+- - project_id
+  - submitter_id
+validators: null
